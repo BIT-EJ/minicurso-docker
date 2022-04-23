@@ -30,7 +30,7 @@ Docker
 - docker build -t name:tag .
 - docker ps
 - docker run name:tag
-- docker run -d name:tag --------> background
+- docker run -d  -P cname:tag --------> background
 - docker logs id
 - docker logs id -f --------> real time
 - docker exec to execute commands inside your docker container, you need the id first
