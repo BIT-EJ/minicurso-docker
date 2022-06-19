@@ -6,3 +6,6 @@
 - so you need to bind the ports - you do it in your <b>running</b> command
   
 ## Debugging a Container
+- use <code>docker logs</code>
+- use <code>docker exec -it containerName /bin/bash</code> to enter inside your Docker Container (interactive terminal)
+- 
