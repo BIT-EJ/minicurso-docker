@@ -4,9 +4,7 @@
 - Makes development and deployment more eficient
 ## Where do containers live?
 - In a container repository
-- Private repositories
-- Public repository
-- <a href="hub.docker.com" target="_blank">DockerHub</a>
+- <a href="https://hub.docker.com" target="_blank">DockerHub</a>
 ## Before containers:
 - Need to install every dependencies in your own operational system
 - High probability to errors, because there are so many steps
@@ -14,7 +12,7 @@
 - A container is an own isolated environment, like an OS
 - Package with all needed configuration
 - One command to install the app
-- Run 2 different versions
+- Runs more than one different versions
 ## Container Image
 - Layers of images
 - Mostly Linux Base Image, because small in size
@@ -28,13 +26,14 @@
 ### <i>IMAGE</i>
 - It is the actual package, and artifact that can be moved around, with a lot of layers
 - <b>not running</b>
+- <code>docker images</code>
 ### <i>CONTAINER</i>
 - Actually start the application
 - Container environment is created
+- "The running environment for a image"
+- Has a <b>port binded</b> to talk to application running inside itself
 - <b>running</b>
-
-## See your containers
-<code>docker ps</code>
+- <code>docker ps</code>
 
 ## Difference between Docker and Virtual Machines
 ### How does an Operational System works?
@@ -51,4 +50,3 @@
 <img src="./assets/vm-diagram.png" style="height: 300px;"/> <br/>
 - Virtual Machines, in the other hand, is the virtualization of a hole system, <i>including</i> the <b>kernel</b>
 - The big advantage of VMs is that you can run any VM in any OS you want, wich is not possible with Docker
-
