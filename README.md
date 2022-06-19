@@ -6,7 +6,7 @@
 - In a container repository
 - Private repositories
 - Public repository
-- DockerHub
+- <a href="hub.docker.com" target="_blank">DockerHub</a>
 ## Before containers:
 - Need to install every dependencies in your own operational system
 - High probability to errors, because there are so many steps
@@ -38,4 +38,17 @@
 
 ## Difference between Docker and Virtual Machines
 ### How does an Operational System works?
-<img src="./assets/os-diagram.png" style="height: 250px; margin:auto;"/>
+<img src="./assets/os-diagram.png" style="height: 300px;"/> <br/>
+- It has the Application layer, where your apps is built
+- Also has the Kernel layer, where the communication with the Hardware happens
+  
+### Docker
+<img src="./assets/docker-diagram.png" style="height: 300px;"/> <br/>
+- The Docker only the virtualization of the applications, and uses the same Kernel of the host - this is why it is so much lighter than VMs
+- the size is so much smaller and faster too
+
+### Virtual machines
+<img src="./assets/vm-diagram.png" style="height: 300px;"/> <br/>
+- Virtual Machines, in the other hand, is the virtualization of a hole system, <i>including</i> the <b>kernel</b>
+- The big advantage of VMs is that you can run any VM in any OS you want, wich is not possible with Docker
+
