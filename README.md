@@ -35,4 +35,7 @@
 
 ## See your containers
 <code>docker ps</code>
-  
+
+## Difference between Docker and Virtual Machines
+### How does an Operational System works?
+<img src="./assets/os-diagram.png" style="{height: 100px;}">
