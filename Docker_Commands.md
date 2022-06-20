@@ -12,5 +12,9 @@
 <code>docker exec -it <i>containerNameOrId</i> /bin/bash</code> to access the <b>terminal</b> of the container<br>
 <code>env</code> to print env vars
 
+<code>docker stop <i>containerNameOrId</i></code><br>
+<code>docker start <i>containerNameOrId</i></code><br>
+
+
 
 

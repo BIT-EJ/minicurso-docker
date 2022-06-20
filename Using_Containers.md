@@ -8,4 +8,8 @@
 ## Debugging a Container
 - use <code>docker logs</code>
 - use <code>docker exec -it containerName /bin/bash</code> to enter inside your Docker Container (interactive terminal)
-- 
+
+# Workflow with Docker
+- to this tutorial, lets imagine that we have a JavaScript application using MongoDB (pulled from DockerHub)
+- you commit it using Git and use Jenkins for CI (continuous integration) that builds a Docker Image and pushes to a Docker Repo
+- finally, the server pulls the image and run the application
