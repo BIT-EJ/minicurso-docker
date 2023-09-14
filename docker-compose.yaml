@@ -26,6 +26,8 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - pg:/var/lib/postgresql/data
+    networks:
+      - my_network
 volumes:
   pg:
 networks:

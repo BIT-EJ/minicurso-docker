@@ -18,9 +18,11 @@ let sequelize;
 
 if (process.env.DB === "sqlite") {
   sequelize = new Sequelize('sqlite::memory');
+  console.log("Using sqlite.");
 } else {
-  // sequelize =  new Sequelize(`postgres://${pg_user}:${pg_pass}@${pg_host}:5432/${pg_db}`);
-  sequelize =  new Sequelize(`postgres://${pg_user}:${pg_pass}@${pg_host}:5432/${pg_db}`);
+  const connecion_str = `postgres://${pg_user}:${pg_pass}@${pg_host}:5432/${pg_db}`;
+  console.log(`Using postgres @ ${connecion_str}`);
+  sequelize =  new Sequelize(connecion_str);
 }
 
 const Notes = sequelize.define('notes', {
