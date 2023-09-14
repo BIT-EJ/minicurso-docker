@@ -1,5 +1,6 @@
-# What is a container?
-- Is a way to package application with all the necessary dependencies and configurations
+# Docker
+## What is a container?
+- It a way to package application with all the necessary dependencies and configurations
 - Portable artifact, easily shared and moved around
 - Makes development and deployment more eficient
 ## Where do containers live?
