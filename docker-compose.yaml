@@ -1,0 +1,32 @@
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    environment:
+      - PORT=8080
+      - POSTGRES_USER=bit
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=exemplo
+      - POSTGRES_HOST=database
+    depends_on:
+      - database
+    networks:
+      - my_network
+  database:
+    image: postgres:alpine
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=bit
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=exemplo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - pg:/var/lib/postgresql/data
+volumes:
+  pg:
+networks:
+  my_network:
