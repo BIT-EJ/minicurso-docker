@@ -120,3 +120,37 @@ POSTGRES_DB=exemplo
 POSTGRES_HOST=database
 PGDATA=/var/lib/postgresql/data/pgdata
 ```
+
+```yaml
+services:
+  backend:
+    build: ./backend
+    restart: on-failure:10
+    ports:
+      - 8080:8080
+    environment:
+      - PORT=$PORT
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_DB=$POSTGRES_DB
+      - POSTGRES_HOST=$POSTGRES_HOST
+    depends_on:
+      - database
+    networks:
+      - my_network
+  database:
+    image: postgres:alpine
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    volumes:
+      - pg:${PGDATA}
+    networks:
+      - my_network
+volumes:
+  pg:
+networks:
+  my_network:
+```
