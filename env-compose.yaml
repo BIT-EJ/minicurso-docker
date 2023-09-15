@@ -5,11 +5,11 @@ services:
     ports:
       - 8080:8080
     environment:
-      - PORT=8080
-      - POSTGRES_USER=bit
-      - POSTGRES_PASSWORD=mysecretpassword
-      - POSTGRES_DB=exemplo
-      - POSTGRES_HOST=database
+      - PORT=$PORT
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_DB=$POSTGRES_DB
+      - POSTGRES_HOST=$POSTGRES_HOST
     depends_on:
       - database
     networks:
@@ -19,13 +19,10 @@ services:
     restart: unless-stopped
     ports:
       - 5432:5432
-    environment:
-      - POSTGRES_USER=bit
-      - POSTGRES_PASSWORD=mysecretpassword
-      - POSTGRES_DB=exemplo
-      - PGDATA=/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
     volumes:
-      - pg:/var/lib/postgresql/data
+      - pg:${PGDATA}
     networks:
       - my_network
 volumes:
